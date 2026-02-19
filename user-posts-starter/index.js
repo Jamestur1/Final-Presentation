@@ -1,5 +1,6 @@
 // API 1: "https://jsonplaceholder.typicode.com/users"
 // API 2: "https://jsonplaceholder.typicode.com/posts?userId=:id"
+
 const userListEl = document.querySelector('.user-list');
 
 async function main() {
@@ -11,7 +12,8 @@ userListEl.innerHTML = usersData.map((user) => userHTML(user)).join("")
 main();
 
 function showUserPosts (id) {
-    window.location.href = 'http://127.0.0.1:5500/user-posts-starter/user.html'
+    localStorage.setItem("id100", id);
+    window.location.href = `${window.location.origin}/user-posts-starter/user.html`
    console.log(id);
 }
 
